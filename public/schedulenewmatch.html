@@ -1,0 +1,115 @@
+<!-- public/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Match Page</title>
+    <style>
+        /* Styles for Schedule a New Match Page */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin-top: 0;
+}
+
+form {
+  width: 70%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* Adjust styles for select box */
+select {
+  height: 40px;
+}
+
+/* Adjust styles for textareas */
+textarea {
+  resize: vertical;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Schedule a New Match</h1>
+    <form id="scheduleForm" action="/api/schedule-match" method="POST">
+        <!-- HTML form for scheduling a new event -->
+        <label for="match_id">Match ID:</label>
+        <input type="text" id="match_id" name="match_id" required><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required><br>
+
+        <label for="team1">Team 1:</label>
+        <input type="text" id="team1" name="team1" required><br>
+
+        <label for="team2">Team 2:</label>
+        <input type="text" id="team2" name="team2" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Scheduled">Scheduled</option>
+            <option value="Completed">Completed</option>
+        </select><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="2" required></textarea><br>
+
+        <label for="result">Result:</label>
+        <textarea id="result" name="result" rows="2" required></textarea><br>
+
+        <button type="submit">Schedule Event</button>
+    </form>
+</body>
+</html>

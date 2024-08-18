@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="fac.html">
+    <title>Sports Managment</title>
+  </head>
+  <style>
+  .mx-2 a{
+    text-decoration: none;
+    color:lightcoral;
+  }
+  .mx-2 a:hover{
+    text-decoration: none;
+    color: white;
+
+  }
+  body{
+    background-color: lightyellow;
+   
+  }
+  .content{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .heading b{
+    text-align: center;
+  }
+  .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color on hover */
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+  </style>
+  <body>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"  >
+
+      <a class="navbar-brand" href="#"><img src="GNDEC SPORTS-logos_white (1).png" width="50px" height="50px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/gallery">Upload Photos<span class="badge badge-success">New</span></a>  
+          </li>  
+          <li class="nav-item">
+              <a class="nav-link" href="gallery2.html">Gallery<span class="sr-only">(current)</span></a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/inventory">Inventory<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fac2.html">Facilities<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+              <div class="dropdown">
+                <a class="nav-link" href="#">Matches<span class="sr-only">(current)</span></a>
+                <div class="dropdown-content">
+                  <a href="/schedule">Schedule</a>
+                  <a href="/results">Results</a>
+                </div>
+              </div>
+            </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Contact-Us<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+              <div class="dropdown">
+                <a class="nav-link" >Event Registration<span class="sr-only">(current)</span></a>
+                <div class="dropdown-content">
+                  <a href="/registerEvent">Solo Event</a>
+                  <a href="/teameventregister.html">Team Event</a>
+                  <a href="/teamdata">Show Team Data</a>
+                </div>
+              </div>
+          </li>
+        </ul>
+
+        
+        <div class="mx-2">
+          <button type="button3" class="btn btn-outline-danger"><a href="/register" >Sign Up</a></button>
+        </div>
+        <div class="mx-2">
+          <button type="button3" class="btn btn-outline-danger"><a href="/login.html" >Login</a></button>
+        </div>
+      </div>
+      
+      
+    </nav>
+
+<!-- Login Modal -->
+<div class="modal fade" id="sign-inModal" tabindex="-1" aria-labelledby="sign-inModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign-in your account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- log-out Modal -->
+<div class="modal fade" id="sign-outModal" tabindex="-1" aria-labelledby="sign-outModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign-Out your account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+</div>
+<div id="node-9" class="node node-page clearfix" about="/?q=node/9" typeof="foaf:Document">
+
+  
+    <span property="dc:title" content="Facilities" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p align="justify">
+<h1>Facilities available:-</h1><br>
+The Gymnasium/Multi exercise Hall is situated on the first floor of sports complex and consist of all types of strength conditioning apparatus.The state –of-the-art fitness center is for everyone.<br>
+The equipments consist of smith machine,  hack squat, cable cross, Olympic lifting platform, wall bars, three multi stations, seven single stations namely bicep curl, chest press, shoulder press, peck deck, seated rowing, leg press, lats pull down along with free weight section, free benches  as well as stretching area for essential cooling down.The student and staff members avail this facility on nominal charges of Rs 50/- per month in the morning and evenings sis day a week.<br></p>
+<p><b>SWIMMING POOL</b><br>
+<img src="https://sports.gndec.ac.in/sites/default/files/1.jpg"><br>
+Swimming pool in our campus is environmental sustainable facility that serves athletic training, competition and leisure needs. It can accommodate 50-60 swimmers and has no diving facility. The facility has 25m x12m dimension with 4 ft. depth at the shallow end and 6 ft depth at the deeper end. The water is fresh with no chlorination as it is causes irritation to skin and eyes. The pool is cleaned every week thoroughly and is filled with fresh water. The used water is drained out to be used for irrigation purpose of   hockey and football grounds and lawns. The water in the swimming pool is maintained and disinfected with alum and bleaching powder. The amenity  include accessible washrooms and changing rooms and stores.<br>
+The timing and charges are as follows:</p>
+<p>1.	Students and staff members	100/- </p>
+<p>2.	Staff members, their spouses &amp; kids above the age of 12,school teaching staff	100/-</p>
+<p>3.	College staff kids below the age of 12	50/-</p>
+<p>4.	Any other outsider (with special permission)	1000/-<br></p>
+<p>TIMMING:-<br>
+1.	Ladies staff members, girls &amp; kids below age of 12 yrs	6:00 am to 7:00 am and 4:00pm to 5:30pm<br>
+2.	Gents staff members, boys and kids above the age of 12 yrs	7:00am to 8:00am and 5:30pm to 7:30pm<br>
+The rules and regulations are as follows:-<br></p>
+<p><b>BILLIARD ROOM</b><br>
+<img src="https://sports.gndec.ac.in/sites/default/files/7.jpg"><br>
+One traditional table with balls and cues is installed in the room. Billiard is regularly played by staff and students in the group of four per hour. The charges are as follows:-<br>
+1.	One time membership fee per semester per player	100/-<br>
+2.	Playing fee per hour per player	20/-<br>
+TIMINGS:<br>
+1.	Group I	4:00pm to 5:00pm<br>
+2.	Group II	5:00pm to 6:00pm<br>
+3.	Group III	6:00 pm to 7:00pm<br>
+<br></p>
+<p><b>LAWNTENNIS </b><br>
+The Tennis courts are located near the main gate of the college and is a sport facility operated and managed by the Department of Physical Education &amp; Sports at the Guru Nanak Dev Engg. College, Ludhiana. The centre has a total of 3 outdoor courts which provides a great playing option. The facility is free of cost and can be used in the mornings and evenings for the play.<br>
+<br></p>
+<p><b>COLLEGE STADIUM</b><br>
+<img src="https://sports.gndec.ac.in/sites/default/files/5.jpg" width="500"><br>
+The Stadium is an open-air, grassy turf  stadium  comprising 400m 8 lane standard track with cricket pitch at the center and is used primarily for track and field events along with cricket . The stadium has a pavilion with stairs and can seat 1,500 in the main grandstand. The facility is used for Training, practice and competitions. University Inter-college Athletic Meet and the College Athletic Meet is hosted annually. The pitch facility is also used to conduct Inter-college Cricket Championship and Cricket Intramurals from time to time. The stadium is a popular location for Punjabi songs and commercial shoots. It has flood lights for illumination at night  and provides amenities such as players retiring room, washrooms, changing rooms, media balcony etc. The pavilion building has department offices, stores, guest rooms, tabletennis room, billiard room and a gymnasium.<br></p>
+<p><b>HOCKEY:</b><br>
+<img src="https://sports.gndec.ac.in/sites/default/files/3.jpg"><br>
+One natural grassy field for hockey<br>
+(Dimensions:100yards long by 60 yards wide)</p>
+<p>Intramural and Extra mural are regularly conducted for boys<br>
+Rental charges per day:1500/- per day<br>
+<br></p>
+<p><b>FOOTBALL</b><br>
+<img src="https://sports.gndec.ac.in/sites/default/files/2%20.jpg"><br>
+One natural grass football field<br>
+(Dimensions:110 yards by 70 yards)</p>
+<p>Intramural and Extra mural are regularly conducted for boys<br>
+Rental charges per day:1500/- per day<br>
+<br></p>
+<p><b>BASKETBALL</b><br>
+<img src="https://sports.gndec.ac.in/sites/default/files/6.jpg" width="500"><br>
+Two cemented Basketball courts (One with food lights)</p>
+<p>Intramural and Extra mural are regularly conducted for boys and girls</p>
+<p>Rental charges per day: 2000/- per day without lights for both courts<br>
+                                    :5000/- per day with lights for both courts</p>
+<p><b>CHESS</b></p>
+<p>Regularly played by students in Sports  Complex. Both intramural and extramural activity is conducted from time to time.</p>
+<p><b>CRICKET</b><br>
+A clay pitch is laid in the track and field stadium with 50 yards boundary for Intramural and Extramural activity. Two hard pitches of chips under nets for practice session is available for students.</p>
+<p>Rental charges per day:5000/- per day<br></p>
+<p><b>BADMINTON</b><br>
+Only outdoor one cemented courts is available to students for play.<br>
+<br></p>
+<p><b>CYCLING</b><br>
+College provide Cycles and students practice at PAU Velodrome, Ludhiana<br>
+<br></p>
+<p><b>VOLLEYBALL</b><br>
+<img src="https://sports.gndec.ac.in/sites/default/files/4.jpg"><br>
+Two outdoor courts with food lights are used for intramural and extramural activity by both boys and girls.<br>
+Rental charges per day: 2000/- per day without lights for both courts<br>
+                                    :5000/- per day with lights for both courts<br>
+<br></p>
+
+</div></div></div>  </div>
+
+
+</div>
+     
+     
+      
+    
+  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

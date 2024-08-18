@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #registration-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: url("down-arrow.png") no-repeat right center;
+      background-size: 20px 20px;
+      padding-right: 30px;
+    }
+
+    button[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Event Registration</h1>
+  <form id="registration-form" action="/registerEvent" method="POST">
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" name="eventName" required><br><br>
+
+    <label for="sportName">Sport Name:</label>
+    <select id="sportName" name="sportName">
+      <option value="cricket">Cricket</option>
+      <option value="football">Football</option>
+      <option value="hockey">Hockey</option>
+      <option value="chess">Chess</option>
+      <option value="badminton">Badminton</option>
+      <option value="volleyball">Volleyball</option>
+      <option value="100m Race">100m Race</option>
+      <option value="400m Race">400m Race</option>
+      <option value="110m Hurdles">110m Hurdles</option>
+    </select><br><br>
+
+    <label for="crn">CRN:</label>
+    <input type="text" id="crn" name="crn" required><br><br>
+
+    <label for="urn">URN:</label>
+    <input type="text" id="urn" name="urn" required><br><br>
+
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName" required><br><br>
+
+    <label for="branch">Branch:</label>
+    <select id="branch" name="branch">
+      <option value="CSE">Computer Science</option>
+      <option value="IT">Information Technology</option>
+      <option value="ECE">Electronics and Communication Engineering</option>
+      <option value="EE">Electrical Engineering</option>
+      <option value="ME">Mechanical Engineering</option>
+      <option value="CE">Civil Engineering</option>
+      <!-- Add more branch options -->
+    </select><br><br>
+
+    <label for="year">Year:</label>
+    <select id="year" name="year">
+      <option value="1">1st Year</option>
+      <option value="2">2nd Year</option>
+      <option value="3">3rd Year</option>
+      <option value="4">4th Year</option>
+      <!-- Add more year options -->
+    </select><br><br>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

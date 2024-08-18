@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      margin-top: 0;
+    }
+
+    #upload-form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #image-input {
+      display: none;
+    }
+
+    #upload-button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .image-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .image-card img {
+      max-width: 100%;
+      max-height: 200px; /* Set maximum height for images */
+      border-radius: 5px;
+    }
+
+    .delete-button {
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 0 0 5px 5px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color on hover */
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"  >
+
+    <a class="navbar-brand" href="#"><img src="GNDEC SPORTS-logos_white (1).png" width="50px" height="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/gallery">Upload Photos<span class="badge badge-success">New</span></a>  
+        </li>  
+        <li class="nav-item">
+            <a class="nav-link" href="gallery2.html">Gallery<span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/inventory">Inventory<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="fac2.html">Facilities<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+            <div class="dropdown">
+              <a class="nav-link" href="#">Matches<span class="sr-only">(current)</span></a>
+              <div class="dropdown-content">
+                <a href="/schedule">Schedule</a>
+                <a href="/results">Results</a>
+              </div>
+            </div>
+          </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">Contact-Us<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+            <div class="dropdown">
+              <a class="nav-link" >Event Registration<span class="sr-only">(current)</span></a>
+              <div class="dropdown-content">
+                <a href="/registerEvent">Solo Event</a>
+                <a href="/teameventregister.html">Team Event</a>
+                <a href="/teamdata">Show Team Data</a>
+              </div>
+            </div>
+        </li>
+      </ul>
+
+      
+      <div class="mx-2">
+        <button type="button3" class="btn btn-outline-danger"><a href="/register" >Sign Up</a></button>
+      </div>
+      <div class="mx-2">
+        <button type="button3" class="btn btn-outline-danger"><a href="/login.html" >Login</a></button>
+      </div>
+    </div>
+    
+    
+  </nav>
+  <h1>Image Gallery</h1>
+  <form id="upload-form" enctype="multipart/form-data">
+    <input type="file" name="image" id="image-input" accept="image/*">
+    <label for="image-input" id="upload-button">Select Image</label>
+    <button type="submit">Upload Image</button>
+  </form>
+  
+  <div id="image-container"></div>
+
+  <script>
+    // Function to fetch and display images
+    function fetchImages() {
+      fetch('/getImages')
+        .then(response => response.json())
+        .then(data => {
+          const imageContainer = document.getElementById('image-container');
+          imageContainer.innerHTML = ''; // Clear existing images
+
+          data.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = image.path;
+            imgElement.alt = image.name;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.className = 'delete-button';
+            deleteButton.addEventListener('click', () => {
+              // Handle image deletion here
+              fetch('/delete/' + image.id, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(result => {
+                  console.log(result.message);
+                  // Fetch and display images again after deletion
+                  fetchImages();
+                })
+                .catch(error => console.error('Error:', error));
+            });
+
+            const imageCard = document.createElement('div');
+            imageCard.className = 'image-card';
+            imageCard.appendChild(imgElement);
+            imageCard.appendChild(deleteButton);
+
+            imageContainer.appendChild(imageCard);
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Fetch and display images when the page loads
+    fetchImages();
+
+    // Handle image upload
+    const uploadForm = document.getElementById('upload-form');
+    uploadForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(uploadForm);
+
+      fetch('/upload', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(result => {
+          console.log(result.message);
+          // Fetch and display images again after upload
+          fetchImages();
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "654fc8399c8a65d334bd61f4"
+  },
+  "username": "abcd",
+  "password": "$2b$10$3h62kfzqh30P4p8ozO3qqOoz1NYxeOF9ASQ80/B.bAgybL50CvmD6",
+  "shop_name": "AJ Publications",
+  "phone_number": "1234567890",
+  "shop_address": "Field Ganj, Ludhiana",
+  "latitude": "31.6427636",
+  "longitude": "74.8565613",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655084ee950fa2e32dd523cb"
+  },
+  "username": "raja",
+  "password": "$2b$10$VtWQ88Mwnl8at7/KOb4rOerVSyMceoVilJOUHRfZ05R7R2.qE9lUu",
+  "shop_name": "Kapoor and Sons",
+  "phone_number": "2244668800",
+  "shop_address": "Khud Mohalla, Ludhiana",
+  "latitude": "31.6052458",
+  "longitude": "74.9150313",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65508d8cc524a726570281b3"
+  },
+  "username": "ramesh",
+  "password": "$2b$10$RUC2Q9/6/sjTlaESwyZzLOUmjbN1EVhKF5bKH1qirHY1nrxJP29kq",
+  "shop_name": "Ramesh Books",
+  "phone_number": "1111199999",
+  "shop_address": "Civil road, mumbai",
+  "latitude": "30.9121977",
+  "longitude": "75.8628798",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65531df755218425a8e72c5c"
+  },
+  "username": "rakesh",
+  "password": "$2b$10$NLAgz5HVpPDLWpTlvtEG4e4rAPP9rGepnEFF0zomXxgzb/d2mOxj6",
+  "shop_name": "Rakesh Jewellery Store",
+  "phone_number": "9876543210",
+  "shop_address": "Khud Mohalla, Ludhiana",
+  "latitude": "31.6669952",
+  "longitude": "74.8617728",
+  "__v": 0
+}]

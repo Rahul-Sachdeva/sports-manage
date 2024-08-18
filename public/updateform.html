@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Match Page</title>
+</head>
+<body>
+    <h1>Update Match Details</h1>
+    <form id="updateForm" action="/api/update-match" method="POST">
+        <!-- HTML form for updating a match -->
+        <label for="match_id">Match ID:</label>
+        <input type="text" id="updateMatchID" name="match_id" required><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="updateDate" name="date" required><br>
+
+        <label for="time">Time:</label>
+        <input type="time" id="updateTime" name="time" required><br>
+
+        <label for="team1">Team 1:</label>
+        <input type="text" id="updateTeam1" name="team1" required><br>
+
+        <label for="team2">Team 2:</label>
+        <input type="text" id="updateTeam2" name="team2" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="updateLocation" name="location" required><br>
+
+        <label for="status">Status:</label>
+        <select id="updateStatus" name="status" required>
+            <option value="Scheduled">Scheduled</option>
+            <option value="Completed">Completed</option>
+        </select><br>
+
+        <label for="description">Description:</label>
+        <textarea id="updateDescription" name="description" rows="2" required></textarea><br>
+
+        <label for="result">Result:</label>
+        <textarea id="updateResult" name="result" rows="2" required></textarea><br>
+
+        <button type="submit">Update Match</button>
+    </form>
+
+    <script>
+        // Retrieve the match object from sessionStorage
+        const match = JSON.parse(sessionStorage.getItem('updateMatch'));
+    
+        // Pre-fill the form fields with match details
+        if (match) {
+            document.getElementById('updateMatchID').value = match.match_id;
+            document.getElementById('updateDate').value = match.date;
+            document.getElementById('updateTime').value = match.time;
+            document.getElementById('updateTeam1').value = match.team1;
+            document.getElementById('updateTeam2').value = match.team2;
+            document.getElementById('updateLocation').value = match.location;
+            document.getElementById('updateStatus').value = match.status;
+            document.getElementById('updateDescription').value = match.description;
+            document.getElementById('updateResult').value = match.result;
+    
+            // Add more lines to pre-fill other form fields as needed
+        }
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "655239a2a03ee5920d9be8b0"
+  },
+  "item": "helmet",
+  "description": "Super Steel Strong Helmet",
+  "quantity": "5",
+  "price": "700",
+  "shop_name": "AJ Publications",
+  "phone_number": "1234567890",
+  "shop_address": "undefined",
+  "latitude": "31.6427636",
+  "longitude": "74.8565613"
+},
+{
+  "_id": {
+    "$oid": "65523e6292795ad1f35faefe"
+  },
+  "item": "helmet",
+  "description": "Triple Layer Strong HIgh Level Helmet",
+  "quantity": "15",
+  "price": "600",
+  "shop_name": "AJ Publications",
+  "phone_number": "1234567890",
+  "shop_address": "undefined",
+  "latitude": "31.6427636",
+  "longitude": "74.8565613"
+},
+{
+  "_id": {
+    "$oid": "65524645d74ba0bcd2455971"
+  },
+  "item": "Pencil",
+  "description": "Super Smooth 2H Nataraj Pencil",
+  "quantity": "10",
+  "price": "4",
+  "shop_name": "AJ Publications",
+  "phone_number": "1234567890",
+  "shop_address": "undefined",
+  "latitude": "31.6427636",
+  "longitude": "74.8565613"
+},
+{
+  "_id": {
+    "$oid": "655248b20e16eaa3f988a3ae"
+  },
+  "item": "MRF bat",
+  "description": "Good Grip Leather Bat",
+  "quantity": "15",
+  "price": "20",
+  "shop_name": "AJ Publications",
+  "phone_number": "1234567890",
+  "shop_address": "Field Ganj, Ludhiana",
+  "latitude": "31.6427636",
+  "longitude": "74.8565613"
+},
+{
+  "_id": {
+    "$oid": "65531ebf55218425a8e72c62"
+  },
+  "item": "Physics Book",
+  "description": "by HC Verma",
+  "quantity": "12",
+  "price": "400",
+  "shop_name": "Ramesh Books",
+  "phone_number": "1111199999",
+  "shop_address": "Civil road, mumbai",
+  "latitude": "30.9121977",
+  "longitude": "75.8628798"
+}]

@@ -1,0 +1,116 @@
+<!-- HTML code in teamData.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Add this <style> section inside your HTML file -->
+<style>
+  /* Styles for the Team Registrations and Team Members sections */
+  div {
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  li {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+</style>
+
+</head>
+<body>
+
+<div>
+    <h2>Team Registrations</h2>
+    <ul id="team-registration-list">
+      <!-- Data for team registrations will be inserted here using JavaScript -->
+    </ul>
+  </div>
+  
+  <div>
+    <h2>Team Members</h2>
+    <ul id="team-member-list">
+      <!-- Data for team members will be inserted here using JavaScript -->
+    </ul>
+  </div>
+  
+  <script>
+    // Fetch data for team registrations from the server
+fetch('/teamregistrations')
+  .then((response) => response.json())
+  .then((teamRegistrations) => {
+    const teamRegistrationList = document.getElementById('team-registration-list');
+
+    // Loop through team registrations and create buttons
+    teamRegistrations.forEach((registration) => {
+      const button = document.createElement('button'); // Use button elements
+      button.textContent = registration.teamName;
+
+      // Attach a click event listener to show team members on button click
+      button.addEventListener('click', () => {
+        // Log a message to indicate that the button was clicked
+        console.log(`Button clicked for teamId: ${registration.id}`); // Use "id" field
+
+        // Fetch team members for the selected registration using "id"
+        fetch(`/teammembers/${registration.id}`) // Use "id" field
+          .then((response) => response.json())
+          .then((teamMembers) => {
+            // Log the received team members
+            console.log('Received team members:', teamMembers);
+
+            const teamMemberList = document.getElementById('team-member-list');
+            teamMemberList.innerHTML = ''; // Clear previous data
+
+            // Loop through team members and create list items
+            teamMembers.forEach((member) => {
+  const memberItem = document.createElement('li');
+  memberItem.textContent = `Name: ${member.studentName}, CRN: ${member.crn}, URN: ${member.urn}, Branch: ${member.branch}, Year: ${member.year}, Email: ${member.email}`;
+  teamMemberList.appendChild(memberItem);
+});
+
+          })
+          .catch((error) => {
+            console.error('Error fetching team members:', error);
+          });
+      });
+
+      teamRegistrationList.appendChild(button);
+    });
+  })
+  .catch((error) => {
+    console.error('Error fetching team registrations:', error);
+  });
+
+  </script>
+  
+</body>
+</html>
